@@ -11,4 +11,3 @@ steps:
       - '-t'
       - 'gcr.io/$PROJECT_ID/fullcycle-devops-desafio-go-ci:latest'
       - '.'
-  images: ['gcr.io/$PROJECT_ID/fullcycle-devops-desafio-go-ci:latest']
