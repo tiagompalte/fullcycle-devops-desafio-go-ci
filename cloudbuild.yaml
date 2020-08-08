@@ -1,0 +1,9 @@
+steps:
+  - id: 'Rodando Teste'
+    name: 'gcr.io/cloud-builders/go'
+    args: ['test','fullcycle-devops-desafio-go-ci']
+    env: ['PROJECT_ROOT=fullcycle-devops-desafio-go-ci', 'GOPATH=.']
+
+  - id: 'Rodando Push da Imagem'
+    name: 'gcr.io/cloud-builders/docker'
+    args: ['build','-t','gcr.io/$PROJECT_ID/fullcycle-devops-desafio-go-ci:latest','.']
