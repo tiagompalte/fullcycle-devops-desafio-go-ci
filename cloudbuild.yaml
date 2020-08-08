@@ -1,0 +1,14 @@
+steps:
+  - id: teste
+    name: "gcr.io/cloud-builders/go"
+    args: ["test"]
+    env: ["GOPATH=."]
+
+  - id: push imagem
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/fullcycle-devops-desafio-go-ci:latest'
+      - '.'
+  images: ['gcr.io/$PROJECT_ID/fullcycle-devops-desafio-go-ci:latest']
